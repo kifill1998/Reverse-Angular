@@ -7,7 +7,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh './mvnw clean test'
+                bat './mvnw clean test'
             }
         }
         
@@ -21,13 +21,13 @@ pipeline {
 //          Adding Test Commit
         stage('Build') {
             steps {
-                sh './mvnw clean package'
+                bat './mvnw clean package'
             }
         }       
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh './mvnw clean deploy'
+                bat './mvnw clean deploy'
             }
         }
     }
